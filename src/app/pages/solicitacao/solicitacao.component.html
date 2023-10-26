@@ -1,0 +1,10 @@
+<ng-container
+  *ngIf="pathname === 'solicitante'; then solicitante; else almoxarife"
+></ng-container>
+
+<ng-template #solicitante>
+  <p>solicitacao works!</p>
+</ng-template>
+<ng-template #almoxarife>
+  <p>almoxarife works!</p>
+</ng-template>

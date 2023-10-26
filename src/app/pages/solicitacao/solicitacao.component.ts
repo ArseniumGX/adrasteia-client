@@ -1,0 +1,14 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-solicitacao',
+  templateUrl: './solicitacao.component.html',
+  styleUrls: ['./solicitacao.component.scss'],
+})
+export class SolicitacaoComponent implements OnInit {
+  pathname: string = '';
+
+  ngOnInit(): void {
+    this.pathname = window.location.pathname.replace(/\//, '');
+  }
+}
