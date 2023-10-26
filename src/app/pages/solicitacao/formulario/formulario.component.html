@@ -1,0 +1,83 @@
+<form class="form" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+  <div class="form__campo">
+    <label for="solicitante">Solicitante*</label>
+    <input
+      type="text"
+      name="solicitante"
+      id="solicitante"
+      formControlName="solicitante"
+      [readOnly]="isAlmoxarife()"
+    />
+    <span
+      *ngIf="
+        formulario.get('solicitante')?.hasError('required') &&
+        formulario.get('solicitante')?.touched
+      "
+    >
+      Campo é obrigatório.
+    </span>
+  </div>
+  <div class="form__campo">
+    <label for="descricao">Descrição*</label>
+    <input
+      type="text"
+      name="descricao"
+      id="descricao"
+      formControlName="descricao"
+      [readOnly]="isAlmoxarife()"
+    />
+    <span
+      *ngIf="
+        formulario.get('descricao')?.hasError('required') &&
+        formulario.get('descricao')?.touched
+      "
+    >
+      Campo é obrigatório.
+    </span>
+  </div>
+  <div class="form__campo">
+    <label for="preco">Preço*</label>
+    <input
+      type="text"
+      name="preco"
+      id="preco"
+      formControlName="preco"
+      [readOnly]="isAlmoxarife()"
+    />
+    <span
+      *ngIf="
+        formulario.get('preco')?.hasError('required') &&
+        formulario.get('preco')?.touched
+      "
+    >
+      Campo é obrigatório.
+    </span>
+  </div>
+  <fieldset class="form__aprovacao-container" *ngIf="isAlmoxarife()">
+    <legend>Aprovação</legend>
+    <select [(ngModel)]="aprovacao" name="aprovacao" id="aprovacao">
+      <option [ngValue]="''"></option>
+      <option [ngValue]="'aprovado'">Aprovar</option>
+      <option [ngValue]="'reprovado'">Reprovar</option>
+    </select>
+    <div>
+      <label for="observacao"></label>
+      <textarea
+        [(ngModel)]="observacao"
+        name="observacao"
+        id="observacao"
+        cols="30"
+        rows="10"
+      >
+      </textarea>
+    </div>
+  </fieldset>
+  <div class="form__btn">
+    <button [disabled]="!isFormValid()" class="form__btn__enviar" type="submit">
+      Enviar
+    </button>
+    <button class="form__btn__cancelar" [routerLink]="''" type="button">
+      Cancelar
+    </button>
+  </div>
+</form>

@@ -6,9 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./solicitacao.component.scss'],
 })
 export class SolicitacaoComponent implements OnInit {
-  pathname: string = '';
+  actor: string = '';
 
   ngOnInit(): void {
-    this.pathname = window.location.pathname.replace(/\//, '');
+    this.actor = window.location.pathname.replace(/\//, '');
   }
 }
