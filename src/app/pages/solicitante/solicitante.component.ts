@@ -1,19 +1,14 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SolicitacaoService } from 'src/app/services/solicitacao.service';
 
 @Component({
-  selector: 'app-formulario',
-  templateUrl: './formulario.component.html',
-  styleUrls: ['./formulario.component.scss'],
+  selector: 'app-solicitante',
+  templateUrl: './solicitante.component.html',
+  styleUrls: ['./solicitante.component.scss'],
 })
-export class FormularioComponent {
-  @Input() actor: string = '';
-
+export class SolicitanteComponent {
   formulario: FormGroup;
-
-  aprovacao: string | null = null;
-  observacao: string | null = null;
 
   constructor(
     private formBuild: FormBuilder,
@@ -30,10 +25,6 @@ export class FormularioComponent {
         ],
       ],
     });
-  }
-
-  isAlmoxarife(): boolean {
-    return this.actor === 'almoxarife';
   }
 
   isFormValid(): boolean {
