@@ -1,3 +1,9 @@
+<main>
+  <div class="title">
+    <h3>Soliciatação de compra</h3>
+    <p>Preenha os dados abaixo para solicitação de material</p>
+  </div>
+</main>
 <form class="form" [formGroup]="formulario" (ngSubmit)="onSubmit()">
   <div class="form__campo">
     <label for="solicitante">Solicitante*</label>
@@ -44,9 +50,8 @@
     />
     <span
       *ngIf="
-        formulario.get('preco')?.hasError('required') ||
-        (formulario.get('preco')?.hasError('pattern') &&
-          formulario.get('preco')?.touched)
+        formulario.get('preco')?.hasError('required') &&
+        formulario.get('preco')?.touched
       "
     >
       Campo é obrigatório e dever ser escrito no formato R$ xx,xx.
@@ -56,7 +61,7 @@
     <button [disabled]="!isFormValid()" class="form__btn__enviar" type="submit">
       Enviar
     </button>
-    <button class="form__btn__cancelar" [routerLink]="''" type="button">
+    <button class="form__btn__cancelar" (click)="cancelar()" type="button">
       Cancelar
     </button>
   </div>

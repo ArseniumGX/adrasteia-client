@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AlmoxarifeService } from '@services/almoxarife.service';
 import { catchError, switchMap } from 'rxjs';
 
@@ -10,14 +11,20 @@ import { catchError, switchMap } from 'rxjs';
 export class AlmoxarifeComponent implements OnInit {
   solicitacoes: any[] = [];
 
-  constructor(private readonly service: AlmoxarifeService) {}
+  constructor(
+    private readonly service: AlmoxarifeService,
+    private readonly: Router
+  ) {}
+
+  voltarPaginaAnterior() {
+    window.history.back();
+  }
 
   ngOnInit(): void {
     this.service
       .listarPendencias()
       .pipe(
         switchMap((res: any) => {
-          console.info(res);
           this.solicitacoes = [...res];
           return res;
         }),

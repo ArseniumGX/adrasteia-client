@@ -31,6 +31,10 @@ export class SolicitanteComponent {
     return this.formulario.status === 'VALID';
   }
 
+  cancelar() {
+    window.history.back();
+  }
+
   onSubmit(): void {
     if (!this.isFormValid()) {
       return;

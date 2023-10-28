@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { AlmoxarifeService } from '@services/almoxarife.service';
-import { catchError } from 'rxjs';
 
 @Component({
   selector: 'app-solicitacao',
@@ -16,8 +15,7 @@ export class SolicitacaoComponent implements OnInit {
 
   constructor(
     private readonly service: AlmoxarifeService,
-    private readonly route: ActivatedRoute,
-    private readonly router: Router
+    private readonly route: ActivatedRoute
   ) {
     this.route.paramMap.subscribe((params) => {
       this.id = parseInt(params.get('id') as string);
@@ -28,6 +26,18 @@ export class SolicitacaoComponent implements OnInit {
     window.history.back();
   }
 
+  btnDisable(): boolean {
+    if (this.aprovacao.length === 0) return true;
+    else if (this.aprovacao === 'Aprovado') return false;
+    else if (
+      this.aprovacao === 'Reprovado' &&
+      this.observacao &&
+      this.observacao.length > 10
+    )
+      return false;
+    else return true;
+  }
+
   onSumit() {
     this.service
       .aprovarOuReprovar(this.id, {
@@ -35,6 +45,7 @@ export class SolicitacaoComponent implements OnInit {
         observacao: this.observacao,
       })
       .subscribe();
+    alert(`Solicitação ${this.aprovacao}`);
     this.voltarPaginaAnterior();
   }
 

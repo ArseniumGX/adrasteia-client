@@ -6,9 +6,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SolicitanteService } from '@services/solicitante.service';
 import { SolicitanteComponent } from './solicitante/solicitante.component';
-import { ComponentsModule } from '@components/components.module';
 import { AlmoxarifeComponent } from './almoxarife/almoxarife.component';
-import { TitleSolicitanteComponent } from './solicitante/title-solicitante/title-solicitante.component';
 import { SolicitacaoComponent } from './almoxarife/solicitacao/solicitacao.component';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -18,7 +16,6 @@ import { HttpClientModule } from '@angular/common/http';
     AdministracaoComponent,
     SolicitanteComponent,
     AlmoxarifeComponent,
-    TitleSolicitanteComponent,
     SolicitacaoComponent,
   ],
   imports: [
@@ -26,10 +23,9 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    ComponentsModule,
     HttpClientModule,
   ],
   exports: [HomeComponent, AdministracaoComponent],
-  providers: [SolicitanteService],
+  providers: [],
 })
 export class PagesModule {}
