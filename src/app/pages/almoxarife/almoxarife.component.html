@@ -1,0 +1,7 @@
+<ul *ngFor="let solicitacao of solicitacoes">
+  <li>
+    <a [routerLink]="['./', solicitacao.id]">
+      {{ solicitacao.solicitante }}
+    </a>
+  </li>
+</ul>

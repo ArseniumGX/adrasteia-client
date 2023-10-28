@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { SolicitacaoService } from 'src/app/services/solicitacao.service';
+import { SolicitanteService } from '@services/solicitante.service';
 
 @Component({
   selector: 'app-solicitante',
@@ -12,7 +12,7 @@ export class SolicitanteComponent {
 
   constructor(
     private formBuild: FormBuilder,
-    private readonly service: SolicitacaoService
+    private readonly service: SolicitanteService
   ) {
     this.formulario = this.formBuild.group({
       solicitante: ['', [Validators.required]],
