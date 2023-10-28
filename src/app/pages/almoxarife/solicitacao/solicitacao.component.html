@@ -1,0 +1,67 @@
+<h3>Solicitação</h3>
+
+<form class="form" (ngSubmit)="onSumit()" *ngIf="solicitacao">
+  <div class="form__campo">
+    <label for="solicitante">Solicitante*</label>
+    <input
+      type="text"
+      name="solicitante"
+      id="solicitante"
+      value="{{ solicitacao.solicitante }}"
+      readonly
+    />
+  </div>
+  <div class="form__campo">
+    <label for="descricao">Descrição*</label>
+    <input
+      type="text"
+      name="descricao"
+      id="descricao"
+      value="{{ solicitacao.descricao }}"
+      readonly
+    />
+  </div>
+  <div class="form__campo">
+    <label for="preco">Preço*</label>
+    <input
+      type="text"
+      name="preco"
+      id="preco"
+      value="{{ solicitacao.preco }}"
+      readonly
+    />
+  </div>
+  <fieldset class="form__aprovacao-container">
+    <legend>Almoxarife</legend>
+    <div class="select">
+      <label for="aprovacao">Aprovação</label>
+      <select name="aprovacao" id="aprovacao" [(ngModel)]="aprovacao">
+        <option value="Aprovado">Aprovar</option>
+        <option value="Reprovado">Reprovar</option>
+      </select>
+    </div>
+    <div class="observacao">
+      <label for="observacao">Observacao</label>
+      <textarea
+        [disabled]="aprovacao !== 'Reprovado'"
+        name="observacao"
+        id="observacao"
+        cols="30"
+        rows="10"
+        [(ngModel)]="observacao"
+      ></textarea>
+    </div>
+  </fieldset>
+  <div class="form__btn">
+    <button class="form__btn__enviar" [disabled]="btnDisable()" type="submit">
+      Enviar
+    </button>
+    <button
+      class="form__btn__cancelar"
+      (click)="voltarPaginaAnterior()"
+      type="button"
+    >
+      Cancelar
+    </button>
+  </div>
+</form>

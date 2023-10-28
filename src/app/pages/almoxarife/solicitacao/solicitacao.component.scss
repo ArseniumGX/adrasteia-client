@@ -1,5 +1,15 @@
 @import "../../../../variables";
 
+h3 {
+  font-family: $font-family;
+  font-weight: 700;
+  font-size: 1.4rem;
+  text-align: center;
+  color: $color-green-senior;
+  margin: 2rem 0;
+  letter-spacing: 0.05rem;
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -9,19 +19,19 @@
   font-family: $font-family;
   font-weight: 400;
 
+  label {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: $color-gray-23;
+    letter-spacing: 0.05rem;
+  }
+
   &__campo {
     display: flex;
     flex-direction: column;
     width: 100%;
     row-gap: 0.3rem;
     position: relative;
-
-    label {
-      font-size: 0.85rem;
-      font-weight: 400;
-      color: $color-gray-23;
-      letter-spacing: 0.05rem;
-    }
 
     input {
       padding: 0.3rem 1em;
@@ -30,6 +40,7 @@
       border: 0.1rem solid $color-gray-93;
       transition: 0.3s ease;
       outline: none;
+      background-color: $color-gray-93;
 
       &:hover {
         border-color: $color-green-light;
@@ -48,6 +59,7 @@
       color: red;
       right: 1.5rem;
       bottom: 0.5rem;
+      user-select: none;
     }
   }
 
@@ -60,11 +72,52 @@
 
     legend {
       color: $color-gray-23;
-      font-size: 0.8rem;
+      font-size: 0.725rem;
     }
 
-    select {
-      grid-column: 1/2;
+    .select {
+      padding: 0.3rem;
+      display: grid;
+      row-gap: 0.4rem;
+
+      select {
+        border-radius: 4px;
+        background-color: #fff;
+        border: 0.1rem solid $color-gray-93;
+
+        &:hover {
+          border-color: $color-green-light;
+        }
+
+        &:focus {
+          border-color: $color-green-regular;
+        }
+      }
+    }
+
+    .observacao {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      padding: 0.3rem;
+
+      textarea {
+        resize: none;
+        border: 0.1rem solid $color-gray-93;
+        padding: 0.8rem;
+        border-radius: 4px;
+        &:hover {
+          border-color: $color-green-light;
+        }
+
+        &:focus {
+          border-color: $color-green-regular;
+        }
+
+        &:disabled {
+          background-color: $color-gray-93;
+        }
+      }
     }
   }
 
