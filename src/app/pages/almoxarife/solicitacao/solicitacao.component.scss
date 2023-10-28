@@ -84,6 +84,8 @@ h3 {
         border-radius: 4px;
         background-color: #fff;
         border: 0.1rem solid $color-gray-93;
+        outline: none;
+        transition: 0.2s;
 
         &:hover {
           border-color: $color-green-light;
@@ -106,6 +108,9 @@ h3 {
         border: 0.1rem solid $color-gray-93;
         padding: 0.8rem;
         border-radius: 4px;
+        outline: none;
+        transition: 0.3s;
+
         &:hover {
           border-color: $color-green-light;
         }
