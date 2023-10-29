@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdministracaoComponent } from '@pages/administracao/administracao.component';
+import { AdministrativoComponent } from '@pages/administrativo/administrativo.component';
 import { AlmoxarifeComponent } from '@pages/almoxarife/almoxarife.component';
 import { SolicitacaoComponent } from '@pages/almoxarife/solicitacao/solicitacao.component';
 import { HomeComponent } from '@pages/home/home.component';
@@ -28,7 +28,7 @@ const routes: Routes = [
   },
   {
     path: 'administracao',
-    component: AdministracaoComponent,
+    component: AdministrativoComponent,
   },
   {
     path: 'solicitacao/:id',

@@ -1,8 +1,8 @@
 <main>
-  <div class="title">
-    <h3>Soliciatação de compra</h3>
-    <p>Preenha os dados abaixo para solicitação de material</p>
-  </div>
+  <app-title3
+    content="Soliciatação de compra"
+    additional="Preenha os dados abaixo para solicitação de material"
+  ></app-title3>
 </main>
 <form class="form" [formGroup]="formulario" (ngSubmit)="onSubmit()">
   <div class="form__campo">
@@ -58,11 +58,17 @@
     </span>
   </div>
   <div class="form__btn">
-    <button [disabled]="!isFormValid()" class="form__btn__enviar" type="submit">
-      Enviar
-    </button>
-    <button class="form__btn__cancelar" (click)="cancelar()" type="button">
-      Cancelar
-    </button>
+    <app-button
+      class="style--button"
+      [content]="'Enviar'"
+      [type]="'submit'"
+      [disable]="!isFormValid()"
+    ></app-button>
+    <app-button
+      class="style--button"
+      [content]="'Cancelar'"
+      [type]="'button'"
+      [action]="cancelar"
+    ></app-button>
   </div>
 </form>

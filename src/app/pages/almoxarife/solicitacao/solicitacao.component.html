@@ -53,15 +53,15 @@
     </div>
   </fieldset>
   <div class="form__btn">
-    <button class="form__btn__enviar" [disabled]="btnDisable()" type="submit">
-      Enviar
-    </button>
-    <button
-      class="form__btn__cancelar"
-      (click)="voltarPaginaAnterior()"
-      type="button"
-    >
-      Cancelar
-    </button>
+    <app-button
+      [content]="'Enviar'"
+      [type]="'submit'"
+      [disable]="btnDisable()"
+    ></app-button>
+    <app-button
+      [content]="'Cancelar'"
+      [type]="'button'"
+      [action]="voltarPaginaAnterior"
+    ></app-button>
   </div>
 </form>

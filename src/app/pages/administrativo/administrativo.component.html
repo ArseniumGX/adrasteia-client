@@ -1,0 +1,62 @@
+<main>
+  <app-title3 content="Fluxo de Solicitaçõe"></app-title3>
+  <fieldset>
+    <legend>Filtros</legend>
+    <fieldset>
+      <legend>Status</legend>
+      Aprovado
+      <input
+        type="radio"
+        name="filtro"
+        value="Aprovado"
+        [(ngModel)]="filtro"
+        (change)="filtrarPorStatus()"
+      />
+      Reprovado<input
+        type="radio"
+        name="filtro"
+        value="Reprovado"
+        [(ngModel)]="filtro"
+        (change)="filtrarPorStatus()"
+      />
+      todos<input
+        type="radio"
+        name="filtro"
+        value="Todos"
+        [defaultChecked]="true"
+        (change)="filtrarPorStatus()"
+        [(ngModel)]="filtro"
+      />
+    </fieldset>
+  </fieldset>
+
+  <table>
+    <caption></caption>
+    <thead>
+      <tr>
+        <th>Solicitante</th>
+        <th>Descrição</th>
+        <th>Preço</th>
+        <th>Status</th>
+        <th>Observação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let solicitacao of solicitacoes" class="item">
+        <td>{{ solicitacao.solicitante }}</td>
+        <td>{{ solicitacao.descricao }}</td>
+        <td>{{ solicitacao.preco }}</td>
+        <td>{{ solicitacao.aprovacao }}</td>
+        <td>{{ solicitacao.observacao }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="btn-container">
+    <app-button
+      [type]="'button'"
+      [content]="'Voltar'"
+      [action]="voltarPaginaAnterior"
+    ></app-button>
+  </div>
+</main>
