@@ -1,0 +1,21 @@
+@import "../../../variables";
+
+h3,
+p {
+  font-family: $font-family;
+  text-align: center;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: $color-green-senior;
+  margin: 2rem 0;
+  letter-spacing: 0.05rem;
+}
+
+p {
+  color: $color-gray-23;
+  letter-spacing: 0.05rem;
+  padding: 0.5rem;
+}

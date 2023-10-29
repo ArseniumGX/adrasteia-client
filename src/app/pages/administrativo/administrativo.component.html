@@ -1,0 +1,82 @@
+<main>
+  <app-title3 content="Fluxo de Solicitações"></app-title3>
+  <div class="filtros--container">
+    <fieldset class="filtros--container__filtro--status">
+      <legend>Filtrar por Status</legend>
+      <div class="input-radio--container">
+        <input
+          type="radio"
+          id="todos"
+          name="filtro"
+          (change)="filtrarPorStatus('todos')"
+          [checked]="true"
+        />
+        <label for="todos">Todos</label>
+      </div>
+      <div class="input-radio--container">
+        <input
+          type="radio"
+          id="aprovado"
+          name="filtro"
+          (change)="filtrarPorStatus('aprovado')"
+        />
+        <label for="aprovado">Aprovados</label>
+      </div>
+      <div class="input-radio--container">
+        <input
+          type="radio"
+          id="reprovado"
+          name="filtro"
+          (change)="filtrarPorStatus('reprovado')"
+        />
+        <label for="reprovado">Reprovados</label>
+      </div>
+    </fieldset>
+    <fieldset class="filtros--container__filtro--por">
+      <legend>Filtrar por</legend>
+      <div class="input-radio--container">
+        <input
+          type="radio"
+          id="solicitante"
+          name="por"
+          value="solicitante"
+          [(ngModel)]="filtroPor"
+        />
+        <label for="solicitante">Solicitante</label>
+      </div>
+      <div class="input-radio--container">
+        <input
+          type="radio"
+          id="descricao"
+          name="por"
+          value="descricao"
+          [(ngModel)]="filtroPor"
+        />
+        <label for="descricao">Descrição</label>
+      </div>
+      <input
+        type="text"
+        [(ngModel)]="filtroPorInput"
+        (input)="filtrarPorSolicitanteDescricao()"
+      />
+    </fieldset>
+  </div>
+
+  <div class="cards">
+    <app-solicitacao-card
+      *ngFor="let solicitacao of solicitacoes"
+      [solicitante]="solicitacao.solicitante"
+      [descricao]="solicitacao.descricao"
+      [preco]="solicitacao.preco"
+      [status]="solicitacao.aprovacao"
+      [observacao]="solicitacao.observacao"
+    ></app-solicitacao-card>
+  </div>
+  <div class="btn-container">
+    <app-button
+      [type]="'button'"
+      [content]="'Voltar'"
+      [action]="voltarPaginaAnterior"
+    ></app-button>
+  </div>
+</main>

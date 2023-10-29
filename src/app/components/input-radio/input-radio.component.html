@@ -1,0 +1,11 @@
+<div class="input-radio--container">
+  <input
+    type="radio"
+    id="{{ htmlFor }}"
+    name="{{ name }}"
+    value="{{ value }}"
+    [checked]="ngModelCustom"
+    (change)="execAction()"
+  />
+  <label *ngIf="label" for="{{ htmlFor }}">{{ label }}</label>
+</div>

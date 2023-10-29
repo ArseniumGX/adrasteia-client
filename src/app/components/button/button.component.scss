@@ -1,0 +1,33 @@
+@import "../../../variables";
+
+button {
+  font-family: $font-family;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+  border: unset;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  color: #fff;
+  min-width: 8rem;
+  width: 100%;
+
+  &[type="button"] {
+    background-color: $color-gray-23;
+  }
+
+  &[type="submit"] {
+    background-color: $color-green-regular;
+  }
+
+  &:hover {
+    box-shadow: 0 0 0.3rem $color-gray-23;
+  }
+
+  &:disabled {
+    background-color: $color-gray-93;
+    cursor: unset;
+    box-shadow: none;
+  }
+}

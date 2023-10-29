@@ -1,7 +1,8 @@
 <div class="almoxarife-container">
-  <h3>Solicitações Pendentes</h3>
+  <app-title3 content="Solicitações Pendentes"></app-title3>
 
   <table>
+    <caption></caption>
     <thead>
       <tr>
         <th>Solicitante</th>
@@ -23,6 +24,9 @@
   </table>
 
   <div class="btn-container">
-    <button type="button" (click)="voltarPaginaAnterior()">Voltar</button>
+    <app-button
+      [content]="'Voltar'"
+      [action]="voltarPaginaAnterior"
+    ></app-button>
   </div>
 </div>
