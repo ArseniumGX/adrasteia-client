@@ -5,7 +5,10 @@ import { SolicitanteService } from '@services/solicitante.service';
 @Component({
   selector: 'app-solicitante',
   templateUrl: './solicitante.component.html',
-  styleUrls: ['./solicitante.component.scss'],
+  styleUrls: [
+    './solicitante.component.scss',
+    './solicitante.responsive.component.scss',
+  ],
 })
 export class SolicitanteComponent {
   formulario: FormGroup;
@@ -39,7 +42,15 @@ export class SolicitanteComponent {
     if (!this.isFormValid()) {
       return;
     }
+    this.service
+      .criarSolicitacao(this.formulario.value)
+      .subscribe((res: any) => {
+        if (res) alert('Solicitação criada com sucesso');
+      });
+    this.limparFomulario();
+  }
 
-    this.service.criarSolicitacao(this.formulario.value).subscribe();
+  limparFomulario() {
+    this.formulario.reset();
   }
 }

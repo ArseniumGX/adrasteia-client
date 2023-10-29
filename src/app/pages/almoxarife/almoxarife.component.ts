@@ -6,7 +6,10 @@ import { catchError, switchMap } from 'rxjs';
 @Component({
   selector: 'app-almoxarife',
   templateUrl: './almoxarife.component.html',
-  styleUrls: ['./almoxarife.component.scss'],
+  styleUrls: [
+    './almoxarife.component.scss',
+    './almoxarife.responsive.component.scss',
+  ],
 })
 export class AlmoxarifeComponent implements OnInit {
   solicitacoes: any[] = [];

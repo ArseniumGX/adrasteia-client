@@ -1,0 +1,20 @@
+@import "../../../variables";
+
+.card--container {
+  display: flex;
+  flex-direction: column;
+  padding: 0.4rem;
+  border: 1px solid $color-gray-93;
+  border-radius: 4px;
+
+  p {
+    font-family: $font-family;
+    font-weight: 400;
+    color: $color-gray-23;
+
+    span {
+      font-weight: 700;
+      letter-spacing: 0.05rem;
+    }
+  }
+}

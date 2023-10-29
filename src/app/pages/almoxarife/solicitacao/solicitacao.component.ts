@@ -5,7 +5,10 @@ import { AlmoxarifeService } from '@services/almoxarife.service';
 @Component({
   selector: 'app-solicitacao',
   templateUrl: './solicitacao.component.html',
-  styleUrls: ['./solicitacao.component.scss'],
+  styleUrls: [
+    './solicitacao.component.scss',
+    './solicitacao.responsive.component.scss',
+  ],
 })
 export class SolicitacaoComponent implements OnInit {
   solicitacao: any;

@@ -52,23 +52,6 @@
     }
   }
 
-  &__aprovacao-container {
-    border: $color-gray-93 solid 1px;
-    border-radius: 8px;
-    width: 100%;
-    padding: 0.5rem;
-    display: grid;
-
-    legend {
-      color: $color-gray-23;
-      font-size: 0.8rem;
-    }
-
-    select {
-      grid-column: 1/2;
-    }
-  }
-
   &__btn {
     display: flex;
     row-gap: 0.5rem;

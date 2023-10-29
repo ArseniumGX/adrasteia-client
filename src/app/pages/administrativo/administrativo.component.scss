@@ -5,64 +5,77 @@ main {
   font-family: $font-family;
   user-select: none;
 
-  h3 {
-    text-align: center;
-    font-weight: 700;
-    font-size: 1.4rem;
-    color: $color-green-senior;
-    margin: 2rem 0;
-    letter-spacing: 0.05rem;
-  }
+  .filtros--container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 0.4rem;
 
-  table {
-    width: 100%;
-    text-align: center;
+    fieldset {
+      padding: 0.4rem;
+      border: $color-gray-93 solid 1px;
+      border-radius: 8px;
 
-    th,
-    tr,
-    td {
-      padding: 5px;
-    }
+      legend {
+        font-size: 0.8rem;
+        font-weight: 400;
+        font-family: $font-family;
+      }
 
-    thead {
-      background-color: $color-gray-23;
-      color: $color-gray-93;
-      font-weight: 700;
-      letter-spacing: 0.05rem;
-    }
-
-    tbody {
-      tr {
-        cursor: pointer;
-        transition: 0.2s;
+      input[type="text"] {
+        letter-spacing: 0.1rem;
+        border-radius: 4px;
+        border: 0.1rem solid $color-gray-93;
+        transition: 0.3s ease;
+        outline: none;
+        background-color: #fff;
 
         &:hover {
-          background-color: #999;
+          border-color: $color-green-light;
+        }
+
+        &:focus {
+          border-color: $color-green-regular;
         }
       }
     }
   }
 
-  .btn-container {
-    display: flex;
-    justify-content: center;
-    padding-top: 1rem;
+  .input-radio--container {
+    padding: 0.2rem;
 
-    button {
+    label {
+      margin-left: 0.2rem;
+      color: $color-gray-23;
       font-family: $font-family;
-      font-weight: 700;
-      letter-spacing: 0.05rem;
-      border: unset;
-      padding: 0.5rem 0.8rem;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: 0.3s ease;
-      color: #fff;
-      background-color: $color-green-regular;
+    }
 
-      &:hover {
-        box-shadow: 0 0 0.3rem $color-gray-23;
+    input {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      display: inline-block;
+      width: 0.825rem;
+      height: 0.825rem;
+      padding: 0.1rem;
+      background-clip: content-box;
+      border: 1px solid $color-gray-93;
+      background-color: $color-gray-93;
+      border-radius: 50%;
+      transition: 0.2s;
+
+      &:checked {
+        border-color: $color-green-light;
+        background-color: $color-green-light;
       }
     }
+  }
+
+  .cards {
+    display: grid;
+    row-gap: 0.5rem;
+  }
+
+  .btn-container {
+    margin: 1rem 0;
   }
 }

@@ -26,6 +26,5 @@ import { ComponentsModule } from '@components/components.module';
     HttpClientModule,
     ComponentsModule,
   ],
-  providers: [],
 })
 export class PagesModule {}
