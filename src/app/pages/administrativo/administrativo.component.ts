@@ -48,7 +48,9 @@ export class AdministrativoComponent implements OnInit {
 
   listarTodasSolicitacoes() {
     this.service.buscarSolicitacoes().subscribe((res: any) => {
-      this.solicitacoes = res;
+      this.solicitacoes = res.filter(
+        (solicitacao: SolicitacaoType) => solicitacao.aprovacao
+      );
     });
   }
 
