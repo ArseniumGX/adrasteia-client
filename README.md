@@ -1,4 +1,4 @@
-# Adrasteia API
+# Adrasteia Client
 
 Desafio desenvolvido como parte das etapas de seleção a vaga de Desenvolvedor Fullstack Jr na da [Senior](https://www.senior.com.br/).
 O desafio se baseia em uma **Aplicação de fluxo de aprovação para compra de material de escritótio**. O projeto possui três cenarios: Solicitante, Almoxarife e Administrativo.
